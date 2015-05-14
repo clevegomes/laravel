@@ -12,15 +12,13 @@ class Vehicles extends Migration {
 	 */
 	public function up()
 	{
-		//
 		Schema::create('vehicles', function(Blueprint $table)
 		{
+
 			$table->increments('id');
-			$table->string('model');
-			$table->string('registration_no')->unique();
-			$table->string('desc');
-			$table->integer('ownerid');
-			$table->boolean('status',true);
+			$table->boolean('status');
+			$table->string('regnumber')->unique();
+			$table->integer('owner_id')->unique();
 			$table->timestamps();
 		});
 	}
@@ -32,7 +30,6 @@ class Vehicles extends Migration {
 	 */
 	public function down()
 	{
-		//
 		Schema::drop('vehicles');
 	}
 

@@ -1,5 +1,6 @@
 <?php namespace App\Providers;
 
+use Illuminate\Routing\Route;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -24,7 +25,11 @@ class RouteServiceProvider extends ServiceProvider {
 	{
 		parent::boot($router);
 
-		//
+//		$router->model('articles',function($id)
+//		{
+//
+//		});
+		$router->model('articles','App\Article');
 	}
 
 	/**

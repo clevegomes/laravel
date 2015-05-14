@@ -6,10 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Laravel</title>
 
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+<!--	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">-->
 
+
+	<link href="{{ asset(elixir('css/all.css')) }}" rel="stylesheet">
 	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+<!--	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>-->
+
+
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,13 +24,21 @@
 </head>
 <body>
 
-
+	@include('partials.nav')
+	@include('flash::message')
 	@yield('content')
+</div>
 
-	@yield('footer')
 
 	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="{{ asset('/js/all.js') }}"></script>
+<!--	<script src="//code.jquery.com/jquery.js"></script>-->
+<!--	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>-->
+<!--	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>-->
+<script>
+	$('#flash-overlay-modal').modal();
+	//$('div.alert').not('.alert-important').delay(3000).slideUp(300);
+</script>
+@yield('footer')
 </body>
 </html>
